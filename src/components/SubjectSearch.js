@@ -1,15 +1,15 @@
 import React from 'react';
 
-function SubjectSearch(props) {
+function SubjectSearch({ handleClick }) {
     return (
         
         <main>
         
         <div>
         <input type="text" />
-        <button>Search</button>
+        <button onClick={handleClick}>Search</button>
       </div>
-      <div classname="searchResults">
+      <div className="searchResults">
         <ul>
             <li>Result</li>
             <li>Result</li>
