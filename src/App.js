@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import Header from './components/Header';
 import './App.css';
+import Content from './components/Content';
+import Nav from './components/Nav';
+import SubjectSearch from './components/SubjectSearch';
+import Form from './components/Form';
+import { Routes, Route, Link, NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import CreateForm from './components/CreateForm';
+import Home from './components/Home';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	// const [page, setPage] = useState('');
+	const navigate = useNavigate();
+
+	function getActivity() {
+		const url = 'https://cheatsheetmern.herokuapp.com/  ';
+
+		console.log('Hello from getactivity()')
+
+		fetch(url)
+			.then((response) => response.json())
+			.then((response) => {
+				console.log(response);
+			})
+			.catch(console.error);
+	}
+
+	return (
+		
+			<div className='App'>
+        <Home getActivity={getActivity}/>
+			</div>
+	);
 }
 
 export default App;
