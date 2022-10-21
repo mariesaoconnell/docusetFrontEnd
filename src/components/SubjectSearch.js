@@ -1,22 +1,24 @@
 import React from 'react';
 
-function SubjectSearch({ handleClick }) {
+function SubjectSearch({getActivity}){
+
+  function testClick(){
+    getActivity()
+    console.log('Search Button Works')
+  }
+
     return (
         
         <main>
         
         <div>
         <input type="text" />
-        <button onClick={handleClick}>Search</button>
+        <button onClick={testClick}>Search</button>
       </div>
-      <div className="searchResults">
-        <ul>
-            <li>Result</li>
-            <li>Result</li>
-            <li>result</li>
-        </ul>
 
-      </div>
+      {/* Render Component that Holds Search Results on Search Click */}
+
+      
         
         </main>
     );

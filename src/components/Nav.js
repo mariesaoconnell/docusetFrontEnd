@@ -1,21 +1,31 @@
-import React from "react";
+import React from 'react';
+import { Routes, Route, Link, NavLink } from 'react-router-dom';
+import CreateForm from './CreateForm';
+import MySheets from './MySheets';
+import SubjectSearch from './SubjectSearch';
+
+
 
 function Nav(props) {
-  return (
-    <nav className="nav">
-     
-      <div>
-        <h3>Home</h3>
-      </div>
-      <div>
-       <h3> My Sheets</h3>
-      </div>
+    return (
+        
+        <div>
+           
+            <Link to='/MySheets'>
+            <h3>My Sheets</h3>
+            </Link>
+            <Link to='/create'>
+            <h3>Create Sheet</h3>
+            </Link>
 
-      <div>
-        <h3>Create sheet</h3>
-      </div>
-    </nav>
-  );
+            <Routes>
+                <Route path='/MySheets' element={<MySheets/>}/>
+                <Route path='/subjectsearch' element={SubjectSearch}/>
+                <Route path='/create' element ={<CreateForm/>}/>
+            </Routes>
+           
+        </div>
+    );
 }
 
 export default Nav;
