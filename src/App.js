@@ -7,15 +7,18 @@ import MySheets from './components/MySheets';
 import SubjectSearch from './components/SubjectSearch';
 import CreateForm from './components/CreateForm';
 import Content from './components/Content';
+import ContentList from './components/ContentList'
+
 
 function App() {
 	const navigate = useNavigate();
 
-	const [content, setContent] = useState({
-		title: '',
-		subject: '',
-		content: '',
-	});
+	const [renderContent, updateRenderedContent] = useState([]);
+
+	function addContent(newContent){
+		renderContent.unshift(newContent)
+		navigate('/content');
+	}
 
 	function getActivity() {
 		const url = 'https://cheatsheetmern.herokuapp.com/  ';
@@ -31,7 +34,7 @@ function App() {
 	return (
 		<div className='App'>
 			<nav>
-				<Home />
+				<Home getActivity={getActivity} />
 			</nav>
 
 			<Routes>
@@ -39,10 +42,15 @@ function App() {
 				<Route path='/subjectsearch' element={SubjectSearch} />
 				<Route
 					path='/create'
-					element={<CreateForm content={content} setContent={setContent} />}
+					element={<CreateForm addContent={addContent} />}
 				/>
-				<Route path='/content' element={<Content />} />
+				<Route
+					path='/content'
+					element={<Content renderContent={renderContent} />}
+				/>
+			<Route path='/' element={<ContentList renderContent={renderContent} />}/>
 			</Routes>
+
 		</div>
 	);
 }

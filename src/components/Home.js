@@ -10,7 +10,7 @@ function Home({ getActivity }) {
 		<nav>
 			<Header />
 			<Nav />
-			<SubjectSearch />
+			<SubjectSearch getActivity={getActivity} />
 		</nav>
 	);
 }

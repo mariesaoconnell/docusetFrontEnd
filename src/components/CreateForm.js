@@ -1,8 +1,27 @@
 import React from 'react';
-
+import {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
+import Content from './Content';
 
-function CreateForm({content, setContent}) {
+function CreateForm({addContent}) {
+
+		const [content, setContent] = useState({
+			title: '',
+			subject: '',
+			body: '',
+		});
+
+		function postContent() {
+    // Simple POST request with a JSON body using fetch
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(content)
+    };
+    fetch('https://cheatsheetmern.herokuapp.com/cheatsheets', requestOptions)
+			.then((response) => response.json())
+			// .then((data) => this.setState({ postId: data.id }));
+}
 
 	const navigate = useNavigate();
 
@@ -16,7 +35,9 @@ function CreateForm({content, setContent}) {
 	// HANDLE SUBMIT
 	function handleSubmit(event) {
 		event.preventDefault();
-		// navigate('/content');
+				postContent();
+				addContent(content);
+				setContent({ title: '', subject: '', body: '' });
 	}
 
 	return (
@@ -39,7 +60,7 @@ function CreateForm({content, setContent}) {
 				/>
 				<input
 					type='text'
-					name='content'
+					name='body'
 					placeholder='Content'
 					value={content.content}
 					onChange={handleChange}

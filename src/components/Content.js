@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-function Content(props) {
+function Content() {
+    // GET LAST POST BY ID
+
     return (
-        <div className="contentBox">
-            <p> content content content content content content content 
-                content content content content content content content content content  </p>
+        <div>
+            <h2>Title</h2>
+            <h3>Subject</h3>
+            <p>Body</p>
         </div>
     );
 }
