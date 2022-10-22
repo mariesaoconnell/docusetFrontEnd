@@ -13,20 +13,21 @@ import ContentList from './components/ContentList'
 function App() {
 	const navigate = useNavigate();
 
-	const [renderContent, updateRenderedContent] = useState([]);
+	const [lastPostID, updateLastPostID] = useState('');
 
-	function addContent(newContent){
-		renderContent.unshift(newContent)
-		navigate('/content');
+	function setID(id){
+		updateLastPostID(id)
+		// console.log(id)
+		navigate('/content/' + id)
 	}
+
 
 	function getActivity() {
 		const url = 'https://cheatsheetmern.herokuapp.com/  ';
-
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
-				console.log(response);
+
 			})
 			.catch(console.error);
 	}
@@ -42,13 +43,13 @@ function App() {
 				<Route path='/subjectsearch' element={SubjectSearch} />
 				<Route
 					path='/create'
-					element={<CreateForm addContent={addContent} />}
+					element={<CreateForm setID={setID}/>}
 				/>
 				<Route
-					path='/content'
-					element={<Content renderContent={renderContent} />}
+					path='/content/:id'
+					element={<Content lastPostID={lastPostID}/>}
 				/>
-			<Route path='/' element={<ContentList renderContent={renderContent} />}/>
+			<Route path='/' element={<ContentList />}/>
 			</Routes>
 
 		</div>
