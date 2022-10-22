@@ -1,23 +1,24 @@
-import Header from './components/Header';
-import './App.css';
-import Content from './components/Content';
-import Nav from './components/Nav';
-import SubjectSearch from './components/SubjectSearch';
-import Form from './components/Form';
-import { Routes, Route, Link, NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import CreateForm from './components/CreateForm';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+
+import './App.css';
 import Home from './components/Home';
+import MySheets from './components/MySheets';
+import SubjectSearch from './components/SubjectSearch';
+import CreateForm from './components/CreateForm';
+import Content from './components/Content';
 
 function App() {
-	// const [page, setPage] = useState('');
 	const navigate = useNavigate();
+
+	const [content, setContent] = useState({
+		title: '',
+		subject: '',
+		content: '',
+	});
 
 	function getActivity() {
 		const url = 'https://cheatsheetmern.herokuapp.com/  ';
-
-		console.log('Hello from getactivity()')
 
 		fetch(url)
 			.then((response) => response.json())
@@ -28,10 +29,21 @@ function App() {
 	}
 
 	return (
-		
-			<div className='App'>
-        <Home getActivity={getActivity}/>
-			</div>
+		<div className='App'>
+			<nav>
+				<Home />
+			</nav>
+
+			<Routes>
+				<Route path='/MySheets' element={<MySheets />} />
+				<Route path='/subjectsearch' element={SubjectSearch} />
+				<Route
+					path='/create'
+					element={<CreateForm content={content} setContent={setContent} />}
+				/>
+				<Route path='/content' element={<Content />} />
+			</Routes>
+		</div>
 	);
 }
 
