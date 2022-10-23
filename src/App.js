@@ -7,28 +7,23 @@ import MySheets from './components/MySheets';
 import SubjectSearch from './components/SubjectSearch';
 import CreateForm from './components/CreateForm';
 import Content from './components/Content';
-import ContentList from './components/ContentList'
-
+import ContentList from './components/ContentList';
 
 function App() {
 	const navigate = useNavigate();
 
 	const [lastPostID, updateLastPostID] = useState('');
 
-	function setID(id){
-		updateLastPostID(id)
-		// console.log(id)
-		navigate('/content/' + id)
+	function setID(id) {
+		updateLastPostID(id);
+		navigate('/content/' + id);
 	}
-
 
 	function getActivity() {
 		const url = 'https://cheatsheetmern.herokuapp.com/  ';
 		fetch(url)
 			.then((response) => response.json())
-			.then((response) => {
-
-			})
+			.then((response) => {})
 			.catch(console.error);
 	}
 
@@ -41,17 +36,15 @@ function App() {
 			<Routes>
 				<Route path='/MySheets' element={<MySheets />} />
 				<Route path='/subjectsearch' element={SubjectSearch} />
-				<Route
-					path='/create'
-					element={<CreateForm setID={setID}/>}
-				/>
+				<Route path='/create' element={<CreateForm setID={setID} />} />
 				<Route
 					path='/content/:id'
-					element={<Content lastPostID={lastPostID}/>}
+					element={<Content lastPostID={lastPostID} />}
 				/>
-			<Route path='/' element={<ContentList />}/>
-			</Routes>
 
+				{/* CONTENTLIST COMPONENT WILL RENDER RECENT POSTS */}
+				<Route path='/' element={<ContentList />} />
+			</Routes>
 		</div>
 	);
 }

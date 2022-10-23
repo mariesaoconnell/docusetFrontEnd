@@ -1,15 +1,13 @@
 import React, { useEffect } from 'react';
 import ContentCard from './ContentCard';
 
-function ContentList({renderContent}) {
+// CONTENTLIST COMPONENT WILL GRAB RECENT POSTS AND RENDER RECENT POSTS
+// WILL NEED TO GRAB ALL RECENT POSTS AND .MAP THEM INTO CONTENT CARD
 
-    console.log(renderContent)
+function ContentList() {
     return (
-        <div id="content-container">
-            {renderContent.map((ele)=>{
-                return <ContentCard ele={ele}/>
-            })
-            }
+        <div id="contentlist-container">
+
         </div>
     );
 }

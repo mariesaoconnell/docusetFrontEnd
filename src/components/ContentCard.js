@@ -1,10 +1,12 @@
 import React from 'react';
 
-function ContentCard({ele}) {
+// THIS WILL BE THE CARD THAT IS DISPLAYED IN CONTENT LIST
+
+function ContentCard() {
   return (
     <div id="content-card-container">
-      <p>{ele.title}</p>
-      <p>{ele.subject}</p>
+      {/* title */}
+      {/* subject  */}
     </div>
   );
 }
