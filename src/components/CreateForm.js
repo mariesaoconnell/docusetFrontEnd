@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Content from './Content';
 
-function CreateForm({ setID }) {
+function CreateForm({ postState }) {
 	const [content, setContent] = useState({
 		title: '',
 		subject: '',
@@ -22,7 +22,7 @@ function CreateForm({ setID }) {
 			.then((response) => {
 				let postID = response[response.length - 1]._id;
 				content.id = postID;
-				return setID(postID); // right now this is setting the ID which is on App.js so that on submit, we will be navigated to content/:id... if we implement state for the entire content object, this will no longer be necessary
+				postState(content);
 			});
 	}
 

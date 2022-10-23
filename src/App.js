@@ -12,11 +12,12 @@ import ContentList from './components/ContentList';
 function App() {
 	const navigate = useNavigate();
 
-	const [lastPostID, updateLastPostID] = useState('');
+	const [sessionPosts, updateSessionPosts] = useState([]);
 
-	function setID(id) {
-		updateLastPostID(id);
-		navigate('/content/' + id);
+	function postState(post) {
+		updateSessionPosts(post)
+		let lastPostId = post.id;
+		navigate('/content/' + lastPostId);
 	}
 
 	function getActivity() {
@@ -36,11 +37,8 @@ function App() {
 			<Routes>
 				<Route path='/MySheets' element={<MySheets />} />
 				<Route path='/subjectsearch' element={SubjectSearch} />
-				<Route path='/create' element={<CreateForm setID={setID} />} />
-				<Route
-					path='/content/:id'
-					element={<Content lastPostID={lastPostID} />}
-				/>
+				<Route path='/create' element={<CreateForm postState={postState} />} />
+				<Route path='/content/:id' element={<Content sessionPosts={sessionPosts}/>} />
 
 				{/* CONTENTLIST COMPONENT WILL RENDER RECENT POSTS */}
 				<Route path='/' element={<ContentList />} />
