@@ -1,7 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function CreateForm() {
+	const navigate = useNavigate();
+
 	const [content, setContent] = useState({
 		title: '',
 		subject: '',
@@ -17,7 +20,14 @@ function CreateForm() {
 		};
 		fetch('https://cheatsheetmern.herokuapp.com/cheatsheets', requestOptions)
 			.then((response) => response.json())
-			.catch((error)=>{console.log(error)})
+			.then((response) => {
+				let postID = response[response.length - 1]._id;
+				content.id = postID;
+				navigate('/content/' + content.id);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	}
 
 	// HANDLE CHANGE
@@ -30,6 +40,7 @@ function CreateForm() {
 	function handleSubmit(event) {
 		event.preventDefault();
 		postContent();
+
 		setContent({ title: '', subject: '', body: '' });
 	}
 
