@@ -13,9 +13,6 @@ function Delete({deletePost}) {
 		let url = 'https://cheatsheetmern.herokuapp.com/cheatsheets/' + id;
 		fetch(url, requestOptions)
 			.then((response) => response.json())
-			.then((response) => {
-        console.log('Post Deleted!');
-			});
 	}
 
   return (

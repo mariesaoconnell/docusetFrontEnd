@@ -18,6 +18,7 @@ function App() {
 	const [sessionPosts, updateSessionPosts] = useState([]);
 	const [currentEditPost, setCurrentEditPost] = useState('');
 	const [deletePost, setDeletePost] = useState('');
+	const [sheets, updateSheets] = useState([]);
 
 	function postState(post) {
 		updateSessionPosts(post)
@@ -31,10 +32,10 @@ function App() {
 
 
 	function getActivity() {
-		const url = 'https://cheatsheetmern.herokuapp.com/  ';
+		const url = 'https://cheatsheetmern.herokuapp.com/';
 		fetch(url)
 			.then((response) => response.json())
-			.then((response) => {})
+			.then((response) => {updateSheets(response)})
 			.catch(console.error);
 	}
 
@@ -45,13 +46,19 @@ function App() {
 			</nav>
 
 			<Routes>
-				<Route path='/MySheets' element={<MySheets />} />
-				<Route path='/subjectsearch' element={SubjectSearch} />
+				<Route path='/MySheets' element={<MySheets sheets={sheets} getActivity={getActivity}/>} />
+
+				<Route path='/subjectsearch' element={<SubjectSearch />} />
+
 				<Route path='/create' element={<CreateForm postState={postState} />} />
+
 				<Route path='/content/:id' element={<Content sessionPosts={sessionPosts} editPost={editPost} setCurrentEditPost={setCurrentEditPost} setDeletePost={setDeletePost}/>} />
+
 				<Route path='/edit/:id' element={<EditPost currentEditPost={currentEditPost} postState={postState}/>} />
+
 				<Route path='/delete/:id' element={<Delete deletePost={deletePost}/>}/>
 				{/* CONTENTLIST COMPONENT WILL RENDER RECENT POSTS */}
+
 				<Route path='/' element={<ContentList />} />
 			</Routes>
 		</div>
