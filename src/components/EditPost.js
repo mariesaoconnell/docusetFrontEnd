@@ -1,9 +1,11 @@
 import {useState} from 'react';
-import {useParams} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 
 
-function EditPost({ currentEditPost, postState }) {
+function EditPost({ currentEditPost }) {
 	const { id } = useParams(); // grabs the ID from the URL
+	const navigate = useNavigate();
+
 	const [content, setContent] = useState({
 		title: currentEditPost.title,
 		subject: currentEditPost.subject,
@@ -21,13 +23,10 @@ function EditPost({ currentEditPost, postState }) {
 		fetch(url, requestOptions)
 			.then((response) => response.json())
 			.then((response) => {
-				let postID = response[response.length - 1]._id;
-				content.id = postID;
-				postState(content);
+				navigate('/content/'+id)
 			});
 	}
 
-  
 	// HANDLE CHANGE
 	function handleChange(event) {
 		//SET STATES

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-function Content({sessionPosts, editPost, setCurrentEditPost, setDeletePost}) {
+function Content({setCurrentEditPost, setDeletePost}) {
     const {id} = useParams(); // grabs the ID from the URL
     const [post, setPost] = useState('')
     const navigate = useNavigate();
 
     useEffect(()=>{
-        fetchById()
+        fetchById();
     },[])
 
     // GET LAST POST BY ID
@@ -22,7 +22,7 @@ function Content({sessionPosts, editPost, setCurrentEditPost, setDeletePost}) {
 
     function editBtnClick(){
         setCurrentEditPost(post);
-        editPost(id);
+        navigate('/edit/'+id)
     }
 
     function deleteBtnClick(){

@@ -1,9 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Content from './Content';
 
-function CreateForm({ postState }) {
+function CreateForm() {
 	const [content, setContent] = useState({
 		title: '',
 		subject: '',
@@ -19,14 +17,8 @@ function CreateForm({ postState }) {
 		};
 		fetch('https://cheatsheetmern.herokuapp.com/cheatsheets', requestOptions)
 			.then((response) => response.json())
-			.then((response) => {
-				let postID = response[response.length - 1]._id;
-				content.id = postID;
-				postState(content);
-			});
+			.catch((error)=>{console.log(error)})
 	}
-
-	const navigate = useNavigate();
 
 	// HANDLE CHANGE
 	function handleChange(event) {

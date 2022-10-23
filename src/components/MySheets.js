@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useEffect} from 'react';
 import MySheet from './MySheet';
 
 function MySheets({sheets, getActivity}) {
     useEffect(()=>{
         getActivity()
-    },[])
+    })
 
     return (
         <div>

@@ -13,23 +13,9 @@ import Delete from './components/Delete';
 
 
 function App() {
-	const navigate = useNavigate();
-
-	const [sessionPosts, updateSessionPosts] = useState([]);
 	const [currentEditPost, setCurrentEditPost] = useState('');
 	const [deletePost, setDeletePost] = useState('');
 	const [sheets, updateSheets] = useState([]);
-
-	function postState(post) {
-		updateSessionPosts(post)
-		let lastPostId = post.id;
-		navigate('/content/' + lastPostId);
-	}
-
-	function editPost(postId) {
-		navigate('/edit/' + postId);
-	}
-
 
 	function getActivity() {
 		const url = 'https://cheatsheetmern.herokuapp.com/';
@@ -50,11 +36,11 @@ function App() {
 
 				<Route path='/subjectsearch' element={<SubjectSearch />} />
 
-				<Route path='/create' element={<CreateForm postState={postState} />} />
+				<Route path='/create' element={<CreateForm />} />
 
-				<Route path='/content/:id' element={<Content sessionPosts={sessionPosts} editPost={editPost} setCurrentEditPost={setCurrentEditPost} setDeletePost={setDeletePost}/>} />
+				<Route path='/content/:id' element={<Content setCurrentEditPost={setCurrentEditPost} setDeletePost={setDeletePost}/>} />
 
-				<Route path='/edit/:id' element={<EditPost currentEditPost={currentEditPost} postState={postState}/>} />
+				<Route path='/edit/:id' element={<EditPost currentEditPost={currentEditPost} />} />
 
 				<Route path='/delete/:id' element={<Delete deletePost={deletePost}/>}/>
 				{/* CONTENTLIST COMPONENT WILL RENDER RECENT POSTS */}
