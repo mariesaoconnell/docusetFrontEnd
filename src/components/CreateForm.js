@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Nav from './Nav';
 
 function CreateForm() {
 	const navigate = useNavigate();
@@ -46,7 +47,9 @@ function CreateForm() {
 
 	return (
 		<div>
-			<h1>Hello From create form</h1>
+			<Nav />
+			<h1 className="mySheetsTitle">Create A Sheet</h1>
+			
 			<form className='form' onSubmit={handleSubmit}>
 				<input
 					type='text'

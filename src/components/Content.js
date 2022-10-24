@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Nav from './Nav';
 
 function Content({setCurrentEditPost, setDeletePost}) {
     const {id} = useParams(); // grabs the ID from the URL
@@ -32,6 +33,7 @@ function Content({setCurrentEditPost, setDeletePost}) {
 
     return (
         <div>
+            <Nav/>
             <h1>Hello from Get Post By ID</h1>
             <h2>{post.title}</h2>
             <h3>{post.subject}</h3>

@@ -27,12 +27,11 @@ function App() {
 
 	return (
 		<div className='App'>
-			<nav>
-				<Home getActivity={getActivity} />
-			</nav>
+			
 
 			<Routes>
-				<Route path='/MySheets' element={<MySheets sheets={sheets} getActivity={getActivity}/>} />
+
+				<Route  path='/MySheets' element={<MySheets className='mySheetsDisplay' sheets={sheets} getActivity={getActivity}/>} />
 
 				<Route path='/subjectsearch' element={<SubjectSearch />} />
 
@@ -45,7 +44,7 @@ function App() {
 				<Route path='/delete/:id' element={<Delete deletePost={deletePost}/>}/>
 				{/* CONTENTLIST COMPONENT WILL RENDER RECENT POSTS */}
 
-				<Route path='/' element={<ContentList />} />
+				<Route path='/' element={<Home />} getActivity={getActivity} />
 			</Routes>
 		</div>
 	);

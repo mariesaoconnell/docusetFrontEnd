@@ -2,11 +2,32 @@
   text-align: center;
 }
 body{
-  background-color: gray;
+  background-color: beige
+  ;
+  
 }
-
+a{
+  color: green;
+}
+.navDiv{
+  border: solid black;
+  color: green;
+  font-family: fantasy;
+}
+.homeImage img{
+  
+    width: 25%;
+    height: 25%;
+  
+}
 .header{
-  color: bisque;
+  color: green;
+  font-family: fantasy;
+}
+.mySheetsTitle{
+  font-family: fantasy;
+  color: green;
+
 }
 .searchResults{
   border: 10px double black;
@@ -40,7 +61,7 @@ body{
 }
 
 .App-link {
-  color: #61dafb;
+  color: beige;
 }
 
 .contentBox{
@@ -74,4 +95,11 @@ body{
   height: 100px;
   background-color: #61dafb;
   margin: 20px;
+}
+.mySheetsDisplay{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: #282c34 double;
+  background-color: beige;
+  color:white ;
 }
