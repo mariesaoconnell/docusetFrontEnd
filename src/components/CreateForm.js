@@ -49,6 +49,7 @@ function CreateForm() {
 		<div>
 			<Nav />
 			<h1 className="mySheetsTitle">Create A Sheet</h1>
+			<h2>🗒</h2>
 			
 			<form className='form' onSubmit={handleSubmit}>
 				<input

@@ -32,9 +32,9 @@ function Content({setCurrentEditPost, setDeletePost}) {
     }
 
     return (
-        <div>
+        <div className="sheetCreated">
             <Nav/>
-            <h1>Hello from Get Post By ID</h1>
+            <h1>📚</h1>
             <h2>{post.title}</h2>
             <h3>{post.subject}</h3>
             <p>{post.body}</p>

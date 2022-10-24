@@ -1,38 +1,47 @@
 .App {
   text-align: center;
 }
-body{
-  background-color: beige
-  ;
-  
+body {
+  background-color: beige;
+  border: double black 10px;
+  margin: 5%;
+  padding: 12%;
 }
-a{
+a {
   color: green;
 }
-.navDiv{
-  border: solid black;
-  color: green;
-  font-family: fantasy;
-}
-.homeImage img{
-  
-    width: 25%;
-    height: 25%;
-  
-}
-.header{
+.navDiv {
   color: green;
   font-family: fantasy;
 }
-.mySheetsTitle{
-  font-family: fantasy;
-  color: green;
-
+.homeImage img {
+  width: 25%;
+  height: 25%;
 }
-.searchResults{
+.header {
+  color: green;
+  font-family: fantasy;
+  border: double black 10px;
+}
+.home {
+  height: 100%;
+}
+.mySheetsTitle {
+  font-family: fantasy;
+  color: black;
+}
+.editPostTitle {
+  font-family: fantasy;
+}
+.editPost {
+  font-family: fantasy;
+  display: flex;
+  justify-content: center;
+}
+.searchResults {
   border: 10px double black;
 }
-.form{
+.form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,13 +67,14 @@ a{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  border: double black;
 }
 
 .App-link {
   color: beige;
 }
 
-.contentBox{
+.contentBox {
   border: 10px solid black;
   margin: 20px;
   padding: 30px;
@@ -80,7 +90,7 @@ a{
 }
 
 /* content styling */
-#content-container{
+#content-container {
   width: 800px;
   height: 100%;
   background-color: beige;
@@ -96,10 +106,15 @@ a{
   background-color: #61dafb;
   margin: 20px;
 }
-.mySheetsDisplay{
+.mySheetsDisplay {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   border: #282c34 double;
   background-color: beige;
-  color:white ;
+  color: white;
+  font-family: fantasy;
+}
+
+.sheetCreated {
+  font-family: fantasy;
 }

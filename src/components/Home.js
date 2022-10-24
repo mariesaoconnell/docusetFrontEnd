@@ -7,7 +7,7 @@ import SubjectSearch from './SubjectSearch';
 
 function Home({ getActivity }) {
 	return (
-		<nav>
+		<nav className='home'>
 			<Header />
 			<Nav />
 			<SubjectSearch getActivity={getActivity} />
