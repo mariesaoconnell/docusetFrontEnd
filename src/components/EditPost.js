@@ -1,32 +1,29 @@
-import React from 'react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useState} from 'react';
+import {useParams, useNavigate} from 'react-router-dom';
 
-function CreateForm() {
+
+function EditPost({ currentEditPost }) {
+	const { id } = useParams(); // grabs the ID from the URL
 	const navigate = useNavigate();
 
 	const [content, setContent] = useState({
-		title: '',
-		subject: '',
-		body: '',
+		title: currentEditPost.title,
+		subject: currentEditPost.subject,
+		body: currentEditPost.body,
 	});
 
-	function postContent() {
+	function updateContent() {
 		// Simple POST request with a JSON body using fetch
 		const requestOptions = {
-			method: 'POST',
+			method: 'PUT',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(content),
 		};
-		fetch('https://cheatsheetmern.herokuapp.com/cheatsheets', requestOptions)
+    let url = 'https://cheatsheetmern.herokuapp.com/cheatsheets/' + id;
+		fetch(url, requestOptions)
 			.then((response) => response.json())
 			.then((response) => {
-				let postID = response[response.length - 1]._id;
-				content.id = postID;
-				navigate('/content/' + content.id);
-			})
-			.catch((error) => {
-				console.log(error);
+				navigate('/content/'+id)
 			});
 	}
 
@@ -39,15 +36,13 @@ function CreateForm() {
 	// HANDLE SUBMIT
 	function handleSubmit(event) {
 		event.preventDefault();
-		postContent();
-
-		setContent({ title: '', subject: '', body: '' });
+		updateContent();
 	}
 
 	return (
 		<div>
-			<h1>Hello From create form</h1>
-			<form className='form' onSubmit={handleSubmit}>
+			<h1>Hello from Edit Post</h1>
+			<form onSubmit={handleSubmit}>
 				<input
 					type='text'
 					name='title'
@@ -66,7 +61,7 @@ function CreateForm() {
 					type='text'
 					name='body'
 					placeholder='Content'
-					value={content.content}
+					value={content.body}
 					onChange={handleChange}
 				/>
 				<button>Submit</button>
@@ -75,4 +70,4 @@ function CreateForm() {
 	);
 }
 
-export default CreateForm;
+export default EditPost;

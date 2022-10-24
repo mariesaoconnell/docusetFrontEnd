@@ -1,19 +1,18 @@
-import React from 'react';
+import { useState } from 'react';
+import { Routes, Route, Link, NavLink } from 'react-router-dom';
+
 import Header from './Header';
-import SubjectSearch from './SubjectSearch';
 import Nav from './Nav';
+import SubjectSearch from './SubjectSearch';
 
-function Home({getActivity}) {
-	return <div>
-
-
-		<Header/>
-		<Nav />
-		<SubjectSearch getActivity={getActivity}/>
-		
-
-
-	</div>;
+function Home({ getActivity }) {
+	return (
+		<nav>
+			<Header />
+			<Nav />
+			<SubjectSearch getActivity={getActivity} />
+		</nav>
+	);
 }
 
 export default Home;
