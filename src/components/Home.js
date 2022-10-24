@@ -7,10 +7,13 @@ import SubjectSearch from './SubjectSearch';
 
 function Home({ getActivity }) {
 	return (
-		<nav>
+		<nav className='home'>
 			<Header />
 			<Nav />
 			<SubjectSearch getActivity={getActivity} />
+			<h4>Welcome to DocuSet</h4>
+			<p>description</p>
+			<div className='homeImage'><img src="https://cdn.pixabay.com/photo/2020/04/30/10/15/cute-notes-5112237_1280.png" alt="" /></div>
 		</nav>
 	);
 }

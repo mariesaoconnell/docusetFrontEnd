@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'
+import Nav from './Nav';
 
 
 function Delete({deletePost}) {
@@ -16,9 +17,12 @@ function Delete({deletePost}) {
 	}
 
   return (
+	<>
+	<Nav/>
     <div onLoad={deleteContent()}>
       <h1>Your Post was Successfully Deleted!</h1>
     </div>
+	</>
   );
 }
 

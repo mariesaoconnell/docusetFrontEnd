@@ -1,6 +1,11 @@
 import React from 'react';
 import {useEffect} from 'react';
 import MySheet from './MySheet';
+import Nav from './Nav';
+
+
+
+
 
 function MySheets({sheets, getActivity}) {
     useEffect(()=>{
@@ -8,14 +13,20 @@ function MySheets({sheets, getActivity}) {
     })
 
     return (
-        <div>
-            <h1>My Sheets</h1>
+
+
+        <>
+        <Nav />
+        <h1 className="mySheetsTitle">My Sheets</h1>
+        <h2 className="mySheetsTitle">Title/Subject</h2>
+        <div className="mySheetsDisplay">
+            
 
             {sheets.map((sheet)=>{
                 return <MySheet sheet={sheet} key={sheet._id}/>
             })}
 
-        </div>
+        </div></>
     );
 }
 

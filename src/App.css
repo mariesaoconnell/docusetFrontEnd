@@ -1,17 +1,51 @@
+
+
+
 .App {
+  
   text-align: center;
 }
-body{
-  background-color: gray;
+body {
+  background-color: beige;
+  border: double black 10px;
+  margin: 5%;
+  padding: 12%;
 }
-
-.header{
-  color: bisque;
+a {
+  color: green;
 }
-.searchResults{
+.navDiv {
+  color: green;
+  font-family: fantasy;
+}
+.homeImage img {
+  width: 25%;
+  height: 25%;
+}
+.header {
+  color: green;
+  font-family: fantasy;
+  border: double black 10px;
+}
+.home {
+  height: 100%;
+}
+.mySheetsTitle {
+  font-family: fantasy;
+  color: black;
+}
+.editPostTitle {
+  font-family: fantasy;
+}
+.editPost {
+  font-family: fantasy;
+  display: flex;
+  justify-content: center;
+}
+.searchResults {
   border: 10px double black;
 }
-.form{
+.form {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,13 +71,14 @@ body{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  border: double black;
 }
 
 .App-link {
-  color: #61dafb;
+  color: beige;
 }
 
-.contentBox{
+.contentBox {
   border: 10px solid black;
   margin: 20px;
   padding: 30px;
@@ -59,7 +94,7 @@ body{
 }
 
 /* content styling */
-#content-container{
+#content-container {
   width: 800px;
   height: 100%;
   background-color: beige;
@@ -74,4 +109,16 @@ body{
   height: 100px;
   background-color: #61dafb;
   margin: 20px;
+}
+.mySheetsDisplay {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: #282c34 double;
+  background-color: beige;
+  color: white;
+  font-family: fantasy;
+}
+
+.sheetCreated {
+  font-family: fantasy;
 }
