@@ -18,6 +18,11 @@ function App() {
 	const [deletePost, setDeletePost] = useState('');
 	const [sheets, updateSheets] = useState([]);
 
+	// DROP DOWN STATE
+	const [searchOp, setSearchOp] = useState('');
+	// INPUT STRING STATE
+	const [inputEl, setInputEl] = useState('');
+
 	function getActivity() {
 		const url = 'https://cheatsheetmern.herokuapp.com/';
 		fetch(url)
@@ -33,7 +38,15 @@ function App() {
 			<nav>
 				<Header />
 				<Nav />
-				<SubjectSearch getActivity={getActivity} />
+				<SubjectSearch
+					getActivity={getActivity}
+					searchOp={searchOp}
+					setSearchOp={setSearchOp}
+					inputEl={inputEl}
+					setInputEl={setInputEl}
+					sheets={sheets}
+					updateSheets={updateSheets}
+				/>
 			</nav>
 
 			<Routes>
