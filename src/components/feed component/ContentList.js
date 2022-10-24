@@ -6,11 +6,7 @@ import ContentCard from './ContentCard';
 // WILL NEED TO GRAB ALL RECENT POSTS AND .MAP THEM INTO CONTENT CARD
 
 function ContentList() {
-    return (
-        <div id="contentlist-container">
-
-        </div>
-    );
+	return <div id='contentlist-container'></div>;
 }
 
 export default ContentList;

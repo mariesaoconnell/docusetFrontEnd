@@ -1,29 +1,33 @@
-import {useState} from 'react';
-import {useParams, useNavigate} from 'react-router-dom';
+import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Nav from '../nav components/Nav';
 
-
-function EditPost({ currentEditPost }) {
-	const { id } = useParams(); // grabs the ID from the URL
+function CreateForm() {
 	const navigate = useNavigate();
 
 	const [content, setContent] = useState({
-		title: currentEditPost.title,
-		subject: currentEditPost.subject,
-		body: currentEditPost.body,
+		title: '',
+		subject: '',
+		body: '',
 	});
 
-	function updateContent() {
+	function postContent() {
 		// Simple POST request with a JSON body using fetch
 		const requestOptions = {
-			method: 'PUT',
+			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(content),
 		};
-    let url = 'https://cheatsheetmern.herokuapp.com/cheatsheets/' + id;
-		fetch(url, requestOptions)
+		fetch('https://cheatsheetmern.herokuapp.com/cheatsheets', requestOptions)
 			.then((response) => response.json())
 			.then((response) => {
-				navigate('/content/'+id)
+				let postID = response[response.length - 1]._id;
+				content.id = postID;
+				navigate('/content/' + content.id);
+			})
+			.catch((error) => {
+				console.log(error);
 			});
 	}
 
@@ -36,13 +40,17 @@ function EditPost({ currentEditPost }) {
 	// HANDLE SUBMIT
 	function handleSubmit(event) {
 		event.preventDefault();
-		updateContent();
+		postContent();
+
+		setContent({ title: '', subject: '', body: '' });
 	}
 
 	return (
 		<div>
-			<h1>Hello from Edit Post</h1>
-			<form onSubmit={handleSubmit}>
+			<h1 className='mySheetsTitle'>Create A Sheet</h1>
+			<h2>🗒</h2>
+
+			<form className='form' onSubmit={handleSubmit}>
 				<input
 					type='text'
 					name='title'
@@ -61,7 +69,7 @@ function EditPost({ currentEditPost }) {
 					type='text'
 					name='body'
 					placeholder='Content'
-					value={content.body}
+					value={content.content}
 					onChange={handleChange}
 				/>
 				<button>Submit</button>
@@ -70,4 +78,4 @@ function EditPost({ currentEditPost }) {
 	);
 }
 
-export default EditPost;
+export default CreateForm;
