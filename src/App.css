@@ -230,3 +230,33 @@ select:hover{
  p{
   padding: 0 15px;
  }
+
+ .home{
+  max-width: 1000px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: .75fr 1fr;
+  grid-template-rows: .25fr 1fr 1fr;
+ }
+
+ .home-header{
+  padding: 20px;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+ }
+
+
+ .homeImage {
+  grid-column: 1;
+  grid-row: 2/ span 3;
+}
+.homeImage>img{
+  height: 100%;
+  width: 50%;
+}
+
+.home-text{
+  grid-column: 2;
+  grid-row: 2 /span 3;
+  margin: auto;
+}
