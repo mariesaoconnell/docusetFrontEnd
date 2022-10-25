@@ -32,6 +32,7 @@ function SubjectSearch({
 				<form id="search-form" onSubmit={handleSubmit}>
 					<select id='search-select' onChange={getBySearch}>
 						<optgroup label='Search By' required={true}>
+							<option value='Search By' disabled hidden selected>Search By</option>
 							<option value='Subject' >Subject</option>
 							<option value='Contains'>Contains</option>
 						</optgroup>
