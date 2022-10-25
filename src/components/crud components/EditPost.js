@@ -43,25 +43,28 @@ function EditPost({ currentEditPost }) {
 		<>
 			<h1 className='editPostTitle'>Edit Post</h1>
 			<div className='editPost'>
-				<form onSubmit={handleSubmit}>
-					<h3>Title</h3>
+				<form className="form" onSubmit={handleSubmit}>
+					<label className='title-label'>Title</label>
 					<input
+						className='form-title'
 						type='text'
 						name='title'
 						placeholder='Title'
 						value={content.title}
 						onChange={handleChange}
 					/>
-					<h3>Subject</h3>
+					<label className='subject-label'>Subject</label>
 					<input
+						className='form-subject'
 						type='text'
 						name='subject'
 						placeholder='Subject'
 						value={content.subject}
 						onChange={handleChange}
 					/>
-					<h3>Content</h3>
-					<input
+					<label className='content-label'>Content</label>
+					<textarea
+						className='form-body'
 						type='text'
 						name='body'
 						placeholder='Content'
