@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# DocuSet
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## In App Snapshots
 
-## Available Scripts
+![Home Page](assets/homeSelectBy.png)
+![Search Page](assets/searchBy.png)
+![Edit Post](assets/editPost.png)
+![Create Post](assets/create.png)
+![My Sheets](assets/mySheets.png)
+![Delete Sheet](assets/delete.png)
+![Preview Content](assets/previewContent.png)
 
-In the project directory, you can run:
 
-### `npm start`
+## What's DocuSet?!
+  Docuset is the Ultimate Note Taking App, not only do we offer our users the typical functionality of most present day apps - create, update, delete, edit - our users have the ability to share their notes across devices! Additionally, we offer users the ability to search their set of sheets by Title and Keywords and many more state of the art features coming soon!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<hr />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
+  Docuset Features Include:
+  - Database Storage allowing user sheets to be accessible across all internet capable devices!
+  - The ability to Create, Update, Delete, and search your sheets
 
-### `npm test`
+<hr />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Up and Coming Features
+  Our devs are currently in the process of implementing:
+  - Rich Text Editors for an enhanced note taking experience
+  - User Accounts - which will unlock a slew of features in the works! You can expect to see:
+    - Login and Create Account Pages!
+    - The ability to collaborate with peers!
+    - A live feed of Notes from you and users you're connected with!
+    - Comment and 'Liking' capability!
 
-### `npm run build`
+  ### _Think Facebook-- but for notes!_
+<hr>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
+ Docuset's Front-End UI is powered by JavaScript and React Framework ⚛️ - with added touches of CSS for Styling! 🎨
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<hr>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Wireframes
+  ![MVP Wireframe](assets/mvpwireframe.png)
+  ![Stretch Wireframe](assets/stretchwireframe.png)
+  ![Stretch Model](assets/stretchmodel.png)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<hr>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
+To use docuset you can:
+- 👉 <a href="https://cheatsheetmern.netlify.app/">Click Here</a> 👈
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Feedback is ALWAYS Welcome!
+> Feedback and recommendations are to be received via email at <i>awesomestDevTeam@feelintheMERN.com</i>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Email address is to be up and running when Google purchases our app within the coming months! Talk to you soon! 💬
