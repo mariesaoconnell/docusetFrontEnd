@@ -23,7 +23,8 @@ function SubjectSearch({
 	function handleSubmit(event) {
 		event.preventDefault();
 		getActivity();
-		navigate('/sheetsearch/' + searchOp + '/' + inputEl);
+		navigate('/search/' + searchOp + '/' + inputEl);
+		setInputEl('')
 	}
 	return (
 		<main>
