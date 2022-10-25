@@ -29,10 +29,10 @@ function SubjectSearch({
 	return (
 		<main>
 			<div>
-				<form onSubmit={handleSubmit}>
+				<form id="search-form" onSubmit={handleSubmit}>
 					<select id='search-select' onChange={getBySearch}>
-						<optgroup label='Search By'>
-							<option value='Subject'>Subject</option>
+						<optgroup label='Search By' required={true}>
+							<option value='Subject' >Subject</option>
 							<option value='Contains'>Contains</option>
 						</optgroup>
 					</select>
@@ -43,6 +43,7 @@ function SubjectSearch({
 						id='search-field'
 						onChange={getInputStr}
 						value={inputEl}
+						required={true}
 					/>
 					<button type='submit'>Search</button>
 				</form>
