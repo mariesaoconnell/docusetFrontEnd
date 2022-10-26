@@ -1,7 +1,7 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-function MySheet({sheet}) {
+function MySheet({ sheet }) {
   return (
 		<div id='child-sheet-div' className='mySheetsDisplay'>
 			<Link to={`/content/${sheet._id}`}>

@@ -2,42 +2,43 @@ import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 function EditPost({ currentEditPost }) {
-	const { id } = useParams(); // grabs the ID from the URL
-	const navigate = useNavigate();
+  const { id } = useParams(); // grabs the ID from the URL
+  const navigate = useNavigate();
 
-	const [content, setContent] = useState({
-		title: currentEditPost.title,
-		subject: currentEditPost.subject,
-		body: currentEditPost.body,
-	});
+  const [content, setContent] = useState({
+    title: currentEditPost.title,
+    subject: currentEditPost.subject,
+    body: currentEditPost.body,
+  });
 
-	function updateContent() {
-		// Simple POST request with a JSON body using fetch
-		const requestOptions = {
-			method: 'PUT',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(content),
-		};
-		let url = 'https://cheatsheetmern.herokuapp.com/cheatsheets/' + id;
-		fetch(url, requestOptions)
-			.then((response) => response.json())
-			.then((response) => {
-				navigate('/content/' + id);
-			});
-	}
+  function updateContent() {
+    // Simple POST request with a JSON body using fetch
+    const requestOptions = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(content),
+    };
+    let url = "https://cheatsheetmern.herokuapp.com/cheatsheets/" + id;
+    fetch(url, requestOptions)
+      .then((response) => response.json())
+      .then((response) => {
+        navigate("/content/" + id);
+      });
+  }
 
-	// HANDLE CHANGE
-	function handleChange(event) {
-		//SET STATES
-		setContent({ ...content, [event.target.name]: event.target.value });
-	}
+  // HANDLE CHANGE
+  function handleChange(event) {
+    //SET STATES
+    setContent({ ...content, [event.target.name]: event.target.value });
+  }
 
-	// HANDLE SUBMIT
-	function handleSubmit(event) {
-		event.preventDefault();
-		updateContent();
-	}
+  // HANDLE SUBMIT
+  function handleSubmit(event) {
+    event.preventDefault();
+    updateContent();
+  }
 
+<<<<<<< HEAD
 	return (
 		<div id="edit-post-container">
 			<h1 className='editPostTitle'>Edit Post</h1>
@@ -75,6 +76,45 @@ function EditPost({ currentEditPost }) {
 			</div>
 		</div>
 	);
+=======
+  return (
+    <>
+      <h1 className="editPostTitle">Edit Post</h1>
+      <div className="editPost">
+        <form className="editPost" onSubmit={handleSubmit}>
+          <label>Title</label>
+          <input
+            className="form-title"
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={content.title}
+            onChange={handleChange}
+          />
+          <label>Subject</label>
+          <input
+            className="form-subject"
+            type="text"
+            name="subject"
+            placeholder="Subject"
+            value={content.subject}
+            onChange={handleChange}
+          />
+          <label>Content</label>
+          <textarea
+            className="form-body"
+            type="text"
+            name="body"
+            placeholder="Content"
+            value={content.body}
+            onChange={handleChange}
+          />
+          <button>Submit</button>
+        </form>
+      </div>
+    </>
+  );
+>>>>>>> main
 }
 
 export default EditPost;
