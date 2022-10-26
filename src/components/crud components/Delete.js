@@ -9,7 +9,7 @@ function Delete() {
 		const requestOptions = {
 			method: 'DELETE',
 		};
-		let url = 'https://docuset-backend.herokuapp.com/cheatsheets' + id;
+		let url = 'https://docuset-backend.herokuapp.com/cheatsheets/' + id;
 		fetch(url, requestOptions).then((response) => response.json());
 	}
 

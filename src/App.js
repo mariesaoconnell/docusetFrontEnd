@@ -19,7 +19,7 @@ function App() {
 	const [sheets, updateSheets] = useState([]);
 
 	function getActivity() {
-		const url = 'https://cheatsheetmern.herokuapp.com/';
+		const url = 'https://docuset-backend.herokuapp.com/cheatsheets/';
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {

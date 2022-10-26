@@ -12,7 +12,7 @@ function Content({ setCurrentEditPost, setDeletePost }) {
 
 	// GET LAST POST BY ID
 	function fetchById() {
-		let url = 'https://docuset-backend.herokuapp.com/cheatsheets/id/' + id;
+		let url = 'https://docuset-backend.herokuapp.com/cheatsheets/' + id;
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {
