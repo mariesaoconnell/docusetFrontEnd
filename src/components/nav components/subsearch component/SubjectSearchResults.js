@@ -29,13 +29,14 @@ function SubjectSearchResults({sheets}) {
   }
 
   return (
-    <div>
+		<div id='search-result-main-div'>
+			<h1>Search Results</h1>
 
-      {filtered.map((sheet)=>{
-        return <ResultCard sheet={sheet} key={sheet._id}/>
-      })}
-    </div>
-  );
+			{filtered.map((sheet) => {
+				return <ResultCard sheet={sheet} key={sheet._id} />;
+			})}
+		</div>
+	);
 }
 
 export default SubjectSearchResults;

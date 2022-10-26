@@ -22,6 +22,7 @@ function SubjectSearch({
 
 	function handleSubmit(event) {
 		event.preventDefault();
+		// if(!searchOp) alert('Select a Search By Parameter!')
 		getActivity();
 		navigate('/search/' + searchOp + '/' + inputEl);
 		setInputEl('')
@@ -29,13 +30,18 @@ function SubjectSearch({
 	return (
 		<main>
 			<div>
-				<form id="search-form" onSubmit={handleSubmit}>
-					<select id='search-select' onChange={getBySearch}>
-						<optgroup label='Search By' required={true}>
-							<option value='Subject' >Subject</option>
-							<option value='Contains'>Contains</option>
-						</optgroup>
-					</select>
+				<form id='search-form' onSubmit={handleSubmit}>
+					<select id='search-select' onChange={getBySearch} required={true}>
+							<option value='' >
+								Search By
+							</option>
+							<option value='Subject' required={true}>
+								Subject
+							</option>
+							<option value='Contains' required={true}>
+								Contains
+							</option>
+						</select>
 
 					<input
 						type='text'
@@ -45,7 +51,7 @@ function SubjectSearch({
 						value={inputEl}
 						required={true}
 					/>
-					<button type='submit'>Search</button>
+					<button type='submit' value='submit'>Search</button>
 				</form>
 			</div>
 		</main>

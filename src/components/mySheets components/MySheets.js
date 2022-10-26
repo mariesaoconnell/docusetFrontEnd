@@ -8,15 +8,15 @@ function MySheets({ sheets, getActivity }) {
 	});
 
 	return (
-		<>
+		<div id='mysheet-container'>
 			<h1 className='mySheetsTitle'>My Sheets</h1>
 			<h2 className='mySheetsTitle'>Title/Subject</h2>
-			<div className='mySheetsDisplay'>
+			<div id="parent-sheet-display" className='mySheetsDisplay'>
 				{sheets.map((sheet) => {
 					return <MySheet sheet={sheet} key={sheet._id} />;
 				})}
 			</div>
-		</>
+		</div>
 	);
 }
 

@@ -46,29 +46,32 @@ function CreateForm() {
 	}
 
 	return (
-		<div id="create-form-container-div">
+		<div id='create-form-container-div'>
 			<h1 className='mySheetsTitle'>Create A Sheet</h1>
 			<h2>🗒</h2>
 
 			<form className='form' onSubmit={handleSubmit}>
+				<label className='title-label'>Title</label>
 				<input
-					id='form-title'
+					className='form-title'
 					type='text'
 					name='title'
 					placeholder='Title'
 					value={content.title}
 					onChange={handleChange}
 				/>
+				<label className='subject-label'>Subject</label>
 				<input
-					id='form-subject'
+					className='form-subject'
 					type='text'
 					name='subject'
 					placeholder='Subject'
 					value={content.subject}
 					onChange={handleChange}
 				/>
+				<label className='content-label'>Content</label>
 				<textarea
-					id='form-body'
+					className='form-body'
 					type='textarea'
 					name='body'
 					placeholder='Content'
