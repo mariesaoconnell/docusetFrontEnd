@@ -49,7 +49,6 @@ function CreateForm() {
       <h1 className="mySheetsTitle">Create A Sheet</h1>
       <h2>🗒</h2>
 
-<<<<<<< HEAD
 			<form className='form' onSubmit={handleSubmit}>
 				<label className='title-label'>Title</label>
 				<input
@@ -82,40 +81,6 @@ function CreateForm() {
 			</form>
 		</div>
 	);
-=======
-      <form id="create-form-container-div" onSubmit={handleSubmit}>
-        <label>Title</label>
-        <input
-          className="form-title"
-          type="text"
-          name="title"
-          placeholder="Title"
-          value={content.title}
-          onChange={handleChange}
-        />
-        <label>Subject</label>
-        <input
-          className="form-subject"
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          value={content.subject}
-          onChange={handleChange}
-        />
-        <label>Content</label>
-        <textarea
-          className="form-body"
-          type="textarea"
-          name="body"
-          placeholder="Content"
-          value={content.content}
-          onChange={handleChange}
-        />
-        <button>Submit</button>
-      </form>
-    </div>
-  );
->>>>>>> main
 }
 
 export default CreateForm;

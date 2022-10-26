@@ -12,7 +12,7 @@ function Content({ setCurrentEditPost, setDeletePost }) {
 
 	// GET LAST POST BY ID
 	function fetchById() {
-		let url = 'https://cheatsheetmern.herokuapp.com/cheatsheets/' + id;
+		let url = 'https://cheatsheetmern.herokuapp.com/cheatsheets/id/' + id;
 		fetch(url)
 			.then((response) => response.json())
 			.then((response) => {

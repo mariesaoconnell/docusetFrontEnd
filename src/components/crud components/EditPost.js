@@ -38,7 +38,6 @@ function EditPost({ currentEditPost }) {
     updateContent();
   }
 
-<<<<<<< HEAD
 	return (
 		<div id="edit-post-container">
 			<h1 className='editPostTitle'>Edit Post</h1>
@@ -76,45 +75,6 @@ function EditPost({ currentEditPost }) {
 			</div>
 		</div>
 	);
-=======
-  return (
-    <>
-      <h1 className="editPostTitle">Edit Post</h1>
-      <div className="editPost">
-        <form className="editPost" onSubmit={handleSubmit}>
-          <label>Title</label>
-          <input
-            className="form-title"
-            type="text"
-            name="title"
-            placeholder="Title"
-            value={content.title}
-            onChange={handleChange}
-          />
-          <label>Subject</label>
-          <input
-            className="form-subject"
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            value={content.subject}
-            onChange={handleChange}
-          />
-          <label>Content</label>
-          <textarea
-            className="form-body"
-            type="text"
-            name="body"
-            placeholder="Content"
-            value={content.body}
-            onChange={handleChange}
-          />
-          <button>Submit</button>
-        </form>
-      </div>
-    </>
-  );
->>>>>>> main
 }
 
 export default EditPost;
