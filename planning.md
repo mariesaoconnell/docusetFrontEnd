@@ -1,7 +1,6 @@
 # Feel The MERN's Project Planning
 
 ## The Approach
-
 (Monday 10/17 - Wednesday 10/19):
   - Decide on Project:
     - DocuSet the Note Taking App
@@ -16,8 +15,6 @@
   - Morning Stand Up:
 
     - Create Roadmap:
-
-
           App.js
           Home.js
           Header.js
