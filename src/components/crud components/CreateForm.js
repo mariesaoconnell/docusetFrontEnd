@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Nav from "../nav components/Nav";
+import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function CreateForm() {
   const navigate = useNavigate();
@@ -50,6 +49,40 @@ function CreateForm() {
       <h1 className="mySheetsTitle">Create A Sheet</h1>
       <h2>🗒</h2>
 
+<<<<<<< HEAD
+			<form className='form' onSubmit={handleSubmit}>
+				<label className='title-label'>Title</label>
+				<input
+					className='form-title'
+					type='text'
+					name='title'
+					placeholder='Title'
+					value={content.title}
+					onChange={handleChange}
+				/>
+				<label className='subject-label'>Subject</label>
+				<input
+					className='form-subject'
+					type='text'
+					name='subject'
+					placeholder='Subject'
+					value={content.subject}
+					onChange={handleChange}
+				/>
+				<label className='content-label'>Content</label>
+				<textarea
+					className='form-body'
+					type='textarea'
+					name='body'
+					placeholder='Content'
+					value={content.content}
+					onChange={handleChange}
+				/>
+				<button id="form-submit">Submit</button>
+			</form>
+		</div>
+	);
+=======
       <form id="create-form-container-div" onSubmit={handleSubmit}>
         <label>Title</label>
         <input
@@ -82,6 +115,7 @@ function CreateForm() {
       </form>
     </div>
   );
+>>>>>>> main
 }
 
 export default CreateForm;

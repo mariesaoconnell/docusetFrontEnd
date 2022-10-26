@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header(props) {
+function Header() {
     return (
         <div className="header">
             <div id="red-circle"></div>

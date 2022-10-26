@@ -1,8 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Nav from '../nav components/Nav';
 
-function Delete({ deletePost }) {
+function Delete() {
 	const { id } = useParams();
 	// DELETE FETCH
 	function deleteContent() {
@@ -15,11 +14,11 @@ function Delete({ deletePost }) {
 	}
 
 	return (
-		<>
+		<div id='delete-post-container'>
 			<div onLoad={deleteContent()}>
 				<h1>Your Post was Successfully Deleted!</h1>
 			</div>
-		</>
+		</div>
 	);
 }
 
