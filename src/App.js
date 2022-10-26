@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import './App.css';
 import Home from './components/Home';
@@ -7,7 +7,6 @@ import MySheets from './components/mySheets components/MySheets';
 import SubjectSearch from './components/nav components/subsearch component/SubjectSearch';
 import CreateForm from './components/crud components/CreateForm';
 import Content from './components/crud components/Content';
-import ContentList from './components/feed component/ContentList';
 import EditPost from './components/crud components/EditPost';
 import Delete from './components/crud components/Delete';
 import Header from './components/nav components/Header';
@@ -18,11 +17,6 @@ function App() {
 	const [currentEditPost, setCurrentEditPost] = useState('');
 	const [deletePost, setDeletePost] = useState('');
 	const [sheets, updateSheets] = useState([]);
-
-	// DROP DOWN STATE
-	const [searchOp, setSearchOp] = useState('');
-	// INPUT STRING STATE
-	const [inputEl, setInputEl] = useState('');
 
 	function getActivity() {
 		const url = 'https://cheatsheetmern.herokuapp.com/';
@@ -40,14 +34,8 @@ function App() {
 				<Header />
 				<Nav />
 				<SubjectSearch
-					getActivity={getActivity}
-					searchOp={searchOp}
-					setSearchOp={setSearchOp}
-					inputEl={inputEl}
-					setInputEl={setInputEl}
-					sheets={sheets}
-					updateSheets={updateSheets}
-				/>
+				updateSheets={updateSheets}
+				/>``
 			</nav>
 
 			<Routes>
@@ -64,7 +52,6 @@ function App() {
 					}
 				/>
 
-				<Route path='/search' element={<SubjectSearch />} />
 				<Route path='/create' element={<CreateForm />} />
 				<Route
 					path='/content/:id'

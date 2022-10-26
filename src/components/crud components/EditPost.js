@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Nav from '../nav components/Nav';
 
 function EditPost({ currentEditPost }) {
 	const { id } = useParams(); // grabs the ID from the URL

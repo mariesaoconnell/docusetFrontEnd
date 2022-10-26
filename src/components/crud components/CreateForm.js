@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Nav from '../nav components/Nav';
 
 function CreateForm() {
 	const navigate = useNavigate();
@@ -78,7 +77,7 @@ function CreateForm() {
 					value={content.content}
 					onChange={handleChange}
 				/>
-				<button>Submit</button>
+				<button id="form-submit">Submit</button>
 			</form>
 		</div>
 	);

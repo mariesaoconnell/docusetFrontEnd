@@ -1,8 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Nav from '../nav components/Nav';
 
-function Delete({ deletePost }) {
+function Delete() {
 	const { id } = useParams();
 	// DELETE FETCH
 	function deleteContent() {

@@ -10,7 +10,7 @@ function MySheets({ sheets, getActivity }) {
 	return (
 		<div id='mysheet-container'>
 			<h1 className='mySheetsTitle'>My Sheets</h1>
-			<h2 className='mySheetsTitle'>Title/Subject</h2>
+			<h2 className='mySheetsTitle'>Sorted by Subject and Title</h2>
 			<div id="parent-sheet-display" className='mySheetsDisplay'>
 				{sheets.map((sheet) => {
 					return <MySheet sheet={sheet} key={sheet._id} />;
