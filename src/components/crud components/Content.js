@@ -33,7 +33,7 @@ function Content({ setCurrentEditPost, setDeletePost }) {
 
 	return (
 		<div className='sheetCreated'>
-			<h1>📚</h1>
+			<h1>📚 Sheet Created 📚</h1>
 			<h2>{post.title}</h2>
 			<h3>{post.subject}</h3>
 			<p>{post.body}</p>

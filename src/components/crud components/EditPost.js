@@ -40,7 +40,7 @@ function EditPost({ currentEditPost }) {
 	}
 
 	return (
-		<>
+		<div id="edit-post-container">
 			<h1 className='editPostTitle'>Edit Post</h1>
 			<div className='editPost'>
 				<form className="form" onSubmit={handleSubmit}>
@@ -74,7 +74,7 @@ function EditPost({ currentEditPost }) {
 					<button>Submit</button>
 				</form>
 			</div>
-		</>
+		</div>
 	);
 }
 

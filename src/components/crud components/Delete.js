@@ -15,11 +15,11 @@ function Delete({ deletePost }) {
 	}
 
 	return (
-		<>
+		<div id='delete-post-container'>
 			<div onLoad={deleteContent()}>
 				<h1>Your Post was Successfully Deleted!</h1>
 			</div>
-		</>
+		</div>
 	);
 }
 
