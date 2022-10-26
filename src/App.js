@@ -35,7 +35,7 @@ function App() {
 				<Nav />
 				<SubjectSearch
 				updateSheets={updateSheets}
-				/>``
+				/>
 			</nav>
 
 			<Routes>

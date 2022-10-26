@@ -34,6 +34,8 @@ function CreateForm() {
 	function handleChange(event) {
 		//SET STATES
 		setContent({ ...content, [event.target.name]: event.target.value });
+
+    console.log('title: ' + content.title + ' subject: ' + content.subject + ' body: ' + content.body)
 	}
 
 	// HANDLE SUBMIT
