@@ -8,7 +8,7 @@ function ResultCard({sheet}) {
 				<p>
 					<span>Subject:</span>
 					<span className='emphasize'>{sheet.subject}</span>
-					<br />
+					
 					<span>Title:</span>
 					<span className='emphasize'>{sheet.title}</span>
 				</p>

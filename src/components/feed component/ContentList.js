@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import ContentCard from './ContentCard';
+import React from 'react';
+
 
 // CONTENTLIST COMPONENT WILL GRAB RECENT POSTS AND RENDER RECENT POSTS
 

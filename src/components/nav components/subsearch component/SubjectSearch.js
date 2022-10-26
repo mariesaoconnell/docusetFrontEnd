@@ -1,47 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function SubjectSearch({
-	getActivity,
-	searchOp,
-	setSearchOp,
-	inputEl,
-	setInputEl,
-	sheets,
-	updateSheets,
-}) {
+function SubjectSearch({updateSheets}) {
 	const navigate = useNavigate();
+	const [searchOp, setSearchOp] = useState('');
+	const [inputEl, setInputEl] = useState('');
 
 	function getBySearch(event) {
 		setSearchOp(event.target.value);
 	}
-
 	function getInputStr(event) {
 		setInputEl(event.target.value);
+	}
+	function fetchBySearchOp() {
+		let url = `https://cheatsheetmern.herokuapp.com/cheatsheets/${searchOp.toLowerCase()}/${inputEl}`;
+
+		fetch(url)
+			.then((res) => res.json(res))
+			.then((res) => {
+				updateSheets(res);
+			});
 	}
 
 	function handleSubmit(event) {
 		event.preventDefault();
-		// if(!searchOp) alert('Select a Search By Parameter!')
-		getActivity();
+		fetchBySearchOp(searchOp);
 		navigate('/search/' + searchOp + '/' + inputEl);
-		setInputEl('')
+		setInputEl('');
 	}
 	return (
 		<main>
 			<div>
 				<form id='search-form' onSubmit={handleSubmit}>
 					<select id='search-select' onChange={getBySearch} required={true}>
-							<option value='' >
-								Search By
-							</option>
-							<option value='Subject' required={true}>
-								Subject
-							</option>
-							<option value='Contains' required={true}>
-								Contains
-							</option>
-						</select>
+						<option value=''>Search By</option>
+						<option value='title'>Title</option>
+						<option value='Subject'>Subject</option>
+						<option value='Contains'>Contains</option>
+					</select>
 
 					<input
 						type='text'
@@ -51,7 +47,9 @@ function SubjectSearch({
 						value={inputEl}
 						required={true}
 					/>
-					<button type='submit' value='submit'>Search</button>
+					<button type='submit' value='submit'>
+						Search
+					</button>
 				</form>
 			</div>
 		</main>

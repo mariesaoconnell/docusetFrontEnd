@@ -3,10 +3,13 @@ import {Link} from 'react-router-dom';
 
 function MySheet({sheet}) {
   return (
-		<div className='mySheetsDisplay'>
+		<div id='child-sheet-div' className='mySheetsDisplay'>
 			<Link to={`/content/${sheet._id}`}>
-				<h3>{sheet.subject} </h3>
-				<p>{sheet.title}</p>
+				<p id='mysheet-subject' className='my-sheet-container'>
+					<span>Subject:</span> <span className="emphasis">{sheet.subject}</span>
+					<br />
+					<span>Title:</span> <span className='emphasis'>{sheet.title}</span>
+				</p>
 			</Link>
 		</div>
 	);
