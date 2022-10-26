@@ -8,7 +8,7 @@ function Content({ setCurrentEditPost, setDeletePost }) {
 
 	useEffect(() => {
 		fetchById();
-	}, []);
+	});
 
 	// GET LAST POST BY ID
 	function fetchById() {
