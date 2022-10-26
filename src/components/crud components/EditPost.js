@@ -18,7 +18,7 @@ function EditPost({ currentEditPost }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(content),
     };
-    let url = "https://cheatsheetmern.herokuapp.com/cheatsheets/" + id;
+    let url = 'https://docuset-backend.herokuapp.com/cheatsheets/' + id;
     fetch(url, requestOptions)
       .then((response) => response.json())
       .then((response) => {

@@ -13,7 +13,7 @@ function SubjectSearch({updateSheets}) {
 		setInputEl(event.target.value);
 	}
 	function fetchBySearchOp() {
-		let url = `https://cheatsheetmern.herokuapp.com/cheatsheets/${searchOp.toLowerCase()}/${inputEl}`;
+		let url = `https://docuset-backend.herokuapp.com/cheatsheets/${searchOp.toLowerCase()}/${inputEl}`;
 
 		fetch(url)
 			.then((res) => res.json(res))

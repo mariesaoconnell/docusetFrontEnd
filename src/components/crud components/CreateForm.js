@@ -18,16 +18,16 @@ function CreateForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(content),
     };
-    fetch("https://cheatsheetmern.herokuapp.com/cheatsheets", requestOptions)
-      .then((response) => response.json())
-      .then((response) => {
-        let postID = response[response.length - 1]._id;
-        content.id = postID;
-        navigate("/content/" + content.id);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    fetch('https://docuset-backend.herokuapp.com/cheatsheets/', requestOptions)
+			.then((response) => response.json())
+			.then((response) => {
+				let postID = response[response.length - 1]._id;
+				content.id = postID;
+				navigate('/content/' + content.id);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
   }
 
   // HANDLE CHANGE
