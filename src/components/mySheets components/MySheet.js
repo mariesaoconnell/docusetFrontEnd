@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 function MySheet({ sheet }) {
   return (
-		<div id='child-sheet-div' className='mySheetsDisplay'>
+		<div id='child-sheet-div'>
+			<div id="shadow"></div>
 			<Link to={`/content/${sheet._id}`}>
 				<p id='mysheet-subject' className='my-sheet-container'>
 					<span>Subject:</span> <span className="emphasis">{sheet.subject}</span>

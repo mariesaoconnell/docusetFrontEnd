@@ -31,16 +31,23 @@ function App() {
 	return (
 		<div className='App'>
 			<nav>
-				<Header />
-				<Nav />
-				<SubjectSearch
-				updateSheets={updateSheets}
-				/>
+				<div id='header-comp'>
+					<Header />
+				</div>
+				<div id='nav-comp'>
+					<Nav />
+				</div>
+				<div id='subsearch-comp'>
+					<SubjectSearch updateSheets={updateSheets} />
+				</div>
 			</nav>
 
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/search/:searchOp/:inputEl' element={<SubjectSearchResults sheets={sheets}/>} />
+				<Route
+					path='/search/:searchOp/:inputEl'
+					element={<SubjectSearchResults sheets={sheets} />}
+				/>
 				<Route
 					path='/MySheets'
 					element={
@@ -61,7 +68,7 @@ function App() {
 							setDeletePost={setDeletePost}
 						/>
 					}
-					/>
+				/>
 				<Route
 					path='/search/:searchOp/:inputEl/content/:id'
 					element={

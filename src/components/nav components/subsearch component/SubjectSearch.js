@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
+import searchicon from '../../../assets/searchicon.png';
 
 function SubjectSearch({updateSheets}) {
 	const navigate = useNavigate();
@@ -29,30 +30,30 @@ function SubjectSearch({updateSheets}) {
 		setInputEl('');
 	}
 	return (
-		<main>
-			<div>
-				<form id='search-form' onSubmit={handleSubmit}>
-					<select id='search-select' onChange={getBySearch} required={true}>
-						<option value=''>Search By</option>
-						<option value='title'>Title</option>
-						<option value='Subject'>Subject</option>
-						<option value='Contains'>Contains</option>
-					</select>
-
-					<input
-						type='text'
-						name='search-field'
-						id='search-field'
-						onChange={getInputStr}
-						value={inputEl}
-						required={true}
+		<div id='parent-search-form'>
+			<form id='search-form' onSubmit={handleSubmit}>
+				<select id='search-select' onChange={getBySearch} required={true}>
+					<option value=''>Search By</option>
+					<option value='title'>Title</option>
+					<option value='Subject'>Subject</option>
+					<option value='Contains'>Contains</option>
+				</select>
+				<input
+					type='text'
+					name='search-field'
+					id='search-field'
+					onChange={getInputStr}
+					value={inputEl}
+					required={true}
+				/>
+				<button type='submit' value='submit'>
+					<img
+						id='search-icon'
+						src='https://i.ibb.co/7vvd1Y5/Search-192x192.png'
 					/>
-					<button type='submit' value='submit'>
-						Search
-					</button>
-				</form>
-			</div>
-		</main>
+				</button>
+			</form>
+		</div>
 	);
 }
 
